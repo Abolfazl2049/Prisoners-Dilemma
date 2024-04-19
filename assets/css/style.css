@@ -1,0 +1,7 @@
+@font-face {
+  font-family: zig;
+  src: url(/fonts/zig.ttf) format(truetype);
+}
+body {
+  font-family: zig;
+}
