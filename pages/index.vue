@@ -1,57 +1,41 @@
 <script setup>
-import {ref, onMounted} from "vue";
-let uiStateManager = ref({
-  oppeningImg: false
-});
+import { ref, onMounted } from "vue";
 let videoOppening = ref();
 onMounted(() => {
   setInterval(() => {
-    uiStateManager.value.oppeningImg = false;
-    videoOppening.value.classList.remove("hidden");
     videoOppening.value.play();
-    setTimeout(() => {
-      uiStateManager.value.oppeningImg = true;
-      videoOppening.value.classList.add("hidden");
-    }, 1650);
-  }, 7000);
-  setTimeout(() => {
-    uiStateManager.value.oppeningImg = true;
-    videoOppening.value.classList.add("hidden");
-  }, 1650);
+  }, 20000);
 });
 </script>
 <template>
-  <div class="w-[100%] h-[100vh] relative">
+  <div class="relative h-[100vh] w-[100%]">
     <img
       src="/imgs/questionMark.png"
-      class="hover:scale-[1.1] transition-all cursor-pointer absolute w-[60px] z-[20]"
-      alt=""
+      class="absolute z-[20] w-[60px] cursor-pointer transition-all hover:scale-[1.1]"
     />
-    <img
-      src="/imgs/Oppening-img2.jpg"
-      style="object-fit: fill"
-      class="h-[100%] w-[100%] absolute z-[0]"
-      alt=""
-      v-if="uiStateManager.oppeningImg"
-    />
-    <div class="absolute bg-[rgba(255,255,255,0.10)] inset-0">
+    <div class="flex-center absolute inset-0 z-[10] bg-[rgba(190,149,149,0.1)]">
       <div
-        class="*:m-2 *:w-[100%] *:h-[75px] *:border-[4px] *:transition-all *:border-white *:cursor-pointer *:text-[20px] *:text-center *:pt-[22px] flex flex-col mx-auto w-[clamp(250px,50%,600px)] mt-[30vh] items-center"
+        class="flex w-[clamp(250px,50%,600px)] flex-col items-center *:m-2 *:h-[75px] *:w-[100%] *:cursor-pointer *:border-[4px] *:border-white *:text-center *:text-[20px] *:transition-all"
       >
-        <div class="hover:bg-white text-white hover:text-[black]">
+        <div class="flex-center text-white hover:bg-white hover:text-[#d06767]">
           Leaderboard
         </div>
-        <div class="hover:bg-white hover:text-black">Play</div>
-        <div class="hover:bg-white text-white hover:text-[black]">Profile</div>
+        <div
+          class="flex-center !border-[#FEFF1E] bg-[#FEFF1E] transition-all hover:text-[23px]"
+        >
+          Play
+        </div>
+        <div class="flex-center text-white hover:bg-white hover:text-[black]">
+          Profile
+        </div>
       </div>
     </div>
     <video
       autoplay
       muted
-      src="/videos/Oppening-video2.mp4"
+      src="/videos/oppening_video.mp4"
       ref="videoOppening"
-      style="object-fit: fill"
-      class="h-[100%] w-[100%]"
+      class="h-[100%] w-[100%] object-fill"
     ></video>
   </div>
 </template>

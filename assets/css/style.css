@@ -5,3 +5,7 @@
 body {
   font-family: zig;
 }
+/* tailwind utilities */
+.flex-center {
+  @apply flex items-center justify-center;
+}
