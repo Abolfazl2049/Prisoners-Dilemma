@@ -5,7 +5,23 @@
 body {
   font-family: zig;
 }
+.bg_img_type {
+  background-image: url("/imgs/type-selection.png");
+  background-position: center;
+  background-size: cover;
+}
+.bg_img_bot {
+  background-image: url("/imgs/bot-selection.jpg");
+  background-position: center;
+  background-size: cover;
+}
 /* tailwind utilities */
 .flex-center {
   @apply flex items-center justify-center;
+}
+.button_container {
+  @apply flex w-[clamp(300px,50%,600px)] flex-col items-center *:m-2 *:h-[75px] *:w-[100%] *:cursor-pointer *:border-[4px] *:border-white *:text-[20px] *:text-white *:transition-all;
+}
+.button_container > * {
+  @apply flex-center;
 }
