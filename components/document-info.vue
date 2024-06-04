@@ -25,7 +25,7 @@ function openModal() {
 }
 </script>
 <template>
-  <button type="button" @click="openModal" class="absolute top-1 z-[20]">
+  <button type="button" @click="openModal" class="absolute top-1 z-[20] left-0">
     <img
       src="/imgs/questionMark.png"
       class="w-[50px] transition-all hover:scale-[1.1]"

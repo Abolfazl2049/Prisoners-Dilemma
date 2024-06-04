@@ -1,11 +1,11 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  devtools: {enabled: true},
-  css: ["~/assets/css/main.css", "~/assets/css/style.css"],
+  devtools: { enabled: true },
+  css: ["~/assets/css/main.css", "~/assets/css/style.css", "atropos/css"],
   postcss: {
     plugins: {
       tailwindcss: {},
-      autoprefixer: {}
-    }
+      autoprefixer: {},
+    },
   }
 });

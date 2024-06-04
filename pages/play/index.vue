@@ -1,4 +1,5 @@
 <template>
+  <documentInfo> some text </documentInfo>
   <div class="bg_img_type flex-center relative h-[100vh] w-[100%]">
     <div class="button_container">
       <div

@@ -25,3 +25,7 @@ body {
 .button_container > * {
   @apply flex-center;
 }
+.my-atropos {
+  width: 320px;
+  height: 160px;
+}
