@@ -12,7 +12,7 @@ body {
 }
 .bg_img_bot {
   background-image: url("/imgs/bot-selection.jpg");
-  background-position: center;
+  background-position: bottom;
   background-size: cover;
 }
 /* tailwind utilities */
@@ -25,7 +25,17 @@ body {
 .button_container > * {
   @apply flex-center;
 }
-.my-atropos {
-  width: 320px;
-  height: 160px;
+.card-animation {
+  animation: card 500ms ease-in-out;
+}
+.card-animation .line-clamp-2 {
+  @apply !line-clamp-none;
+}
+@keyframes card {
+  from {
+    opacity: 0.5;
+  }
+  to {
+    opacity: 1;
+  }
 }

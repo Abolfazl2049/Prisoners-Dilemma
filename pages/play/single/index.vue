@@ -46,24 +46,40 @@ let bot_list = [
     icon: "random",
   },
 ];
+onMounted(() => {
+  let el = document.querySelectorAll("#card");
+  el.forEach((x) => {
+    x.addEventListener("mouseenter", () => {
+      x.classList.toggle("card-animation");
+    });
+  });
+  el.forEach((x) => {
+    x.addEventListener("mouseleave", () => {
+      x.classList.toggle("card-animation");
+    });
+  });
+});
 </script>
 <template>
-  <div class="bg_img_bot flex-center h-[100vh]">
+  <div class="bg_img_bot h-[100vh] overflow-y-scroll py-10">
     <DocumentInfo> some text </DocumentInfo>
-    <div class="flex h-fit w-[clmap(300px,70%,900px)] flex-col border">
+    <div
+      class="mx-auto flex h-fit w-[clamp(300px,70%,900px)] flex-col transition-all hover:max-h-[300px]"
+    >
       <div
+        id="card"
         v-for="i in bot_list"
-        class="my-2 flex h-fit border text-white transition-all"
+        class="my-2 flex h-fit border p-3 text-white"
       >
         <div class="flex min-h-full min-w-6 items-center justify-center">
-          <div class="size-4 bg-white"></div>
+          <div class="bg-gold h-9 w-1"></div>
         </div>
         <div class="flex flex-col">
-          <div class="flex w-full justify-between">
-            <p>{{ i.name }}</p>
-            <img :src="'/imgs/' + i.icon + '-avatar.png'" class="w-8" />
+          <div class="flex w-full items-center justify-between">
+            <p class="text-black">{{ i.name }}</p>
+            <img :src="'/imgs/' + i.icon + '-avatar.png'" class="w-[40px]" />
           </div>
-          <p class="line-clamp-2 transition-all hover:line-clamp-none">
+          <p class="line-clamp-2">
             {{ i.desc }}
           </p>
         </div>
