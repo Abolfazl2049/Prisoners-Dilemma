@@ -77,7 +77,7 @@ let bot_list = ref([
         <div class="flex min-h-full min-w-6 items-center justify-center">
           <div class="h-9 w-1 bg-gold transition-all"></div>
         </div>
-        <div class="flex flex-col" v-auto-animate>
+        <div class="flex flex-col" >
           <div class="flex w-full items-center justify-between">
             <p class="text-black">{{ i.name }}</p>
             <img :src="'/imgs/' + i.icon + '-avatar.png'" class="w-[40px]" />
